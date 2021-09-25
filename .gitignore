@@ -222,6 +222,7 @@ hs_err_pid*
 # IDE / editors
 .vscode
 .idea
+**/*.iml
 
 # macOS
 .DS_Store
