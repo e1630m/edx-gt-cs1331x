@@ -12,6 +12,8 @@ public abstract class Player implements Comparable<Player> {
     // manually adding them will result in errors.
     private static Player[] players;
 
+    public static final int DEFAULT_SUS_LEVEL = 15;
+
     /**
      * Constructor for Player Objects. Be sure to use this constructor, as it properly populates the players array.
      * The logic in this constructor ensures that players is always full, although frozen players will still be in it.
@@ -47,6 +49,7 @@ public abstract class Player implements Comparable<Player> {
      * have an emergency meeting.
      */
     //YOUR CODE HERE
+    public abstract void emergencyMeeting();
 
     /**
      * This method is the compareTo method from the Comparable interface.
@@ -55,8 +58,7 @@ public abstract class Player implements Comparable<Player> {
      * @return int this value will tell you the ordering of 2 Player objects
      */
     public int compareTo(Player p) {
-        // YOUR CODE HERE
-        return 0; // delete this once you have implemented this method
+        return this.susLevel - p.getSusLevel();
     }
 
     /**
