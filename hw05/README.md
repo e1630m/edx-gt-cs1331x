@@ -49,22 +49,22 @@ Do not create any other methods than those specified. Any extra methods will res
 * `compareTo(Player p)`
   * Override the `compareTo` method (You should be able to put `@Override` on the line before the method header)
   * Takes in a Player object and returns an int, adhering to the API contract (Comparable Interface)
-  * The method body should compare two Player objects based on the susLevel attribute. If the current Player instance’s susLevel is less than the Player passed in, return a negative number. If it is greater, return a positive number. If their susLevel attributes are equal, return 0
+  * The method body should compare two Player objects based on the `susLevel` attribute. If the current Player instance’s `susLevel` is less than the Player passed in, return a negative number. If it is greater, return a positive number. If their `susLevel` attributes are equal, return 0
 
 ### RedAstronaut.java
-This file defines a RedAstronaut, which is a Player and should have all attributes of one. Have RedAstronaut implement the Impostor interface.
+This file defines a RedAstronaut, which is a Player and should have all attributes of one. **Have RedAstronaut implement the Impostor interface**.
 
 #### Variables
 All variables must be not allowed to be directly modified outside the class in which they are declared, unless otherwise stated in the description of the variable. Hint: there is a specific visibility modifier that can do this!
 
 The Red class must have these variables. Do **NOT** re-declare any of the instance variables declared in Player class:
 
-* skill - a String that represents skill of the Red crewmate a String value of either inexperienced, experienced, or expert.
+* `skill` - a String that represents `skill` of the Red crewmate a String value of either inexperienced, experienced, or expert.
 
 #### Constructors
-* A constructor that takes in the name, susLevel, and skill and sets all fields accordingly. It must accept the variables in the specified order. Assume that the passed in parameter for skill will be one of the three values, although it may have different capitalization.
+* A constructor that takes in the name, `susLevel`, and `skill` and sets all fields accordingly. It must accept the variables in the specified order. Assume that the passed in parameter for `skill` will be one of the three values, although it may have different capitalization.
   * Hint: There is a specified keyword in L12 to access the superclass’s constructor.
-* A constructor that takes in just a name and assigns the following default values:
+* A constructor that takes in just a `name` and assigns the following default values:
   * `susLevel`: `15`
   * `skill`: `"experienced"`
 
@@ -74,8 +74,8 @@ Do not create any other methods than those specified. Any extra methods will res
 * `emergencyMeeting()`
   * **A Player that is frozen cannot call an emergency meeting.**
   * Holds a meeting and votes out (freezes) the most suspicious Player, only considering Players that are not frozen
-    * The player that has the highest susLevel (that is NOT the current impostor calling the meeting) will be accused of being the impostor and will be voted off
-    * If two players have the same highest susLevel, no player will be voted off.
+    * The player that has the highest `susLevel` (**that is NOT the current impostor calling the meeting**) will be accused of being the impostor and will be voted off
+    * If two players have the same highest `susLevel`, no player will be voted off.
     * **Hint**: think of an easy way to do this without having to iterate through the entire array. Check the Java API for Arrays for a method you can use
   * Make sure to change the frozen variable of the player to true when voting off players (don’t call the freeze method!)
   * At the end of the vote, check if the game is over using the provided method in Player.java
@@ -83,44 +83,44 @@ Do not create any other methods than those specified. Any extra methods will res
 * `freeze(Player p)`
   * Implements the method provided in the Impostor interface.
   * It is not possible to freeze another Impostor, and an Impostor that is frozen cannot attempt to freeze. If the passed in Player is an Impostor, the method should end. Freezing an already frozen Player should also do nothing.
-  * A freeze is successful if the RedAstronaut’s susLevel is less than the Player’s
-  * If the freeze is unsuccessful, the RedAstronaut’s susLevel doubles (multiply the current susLevel by 2)
+  * A freeze is successful if the RedAstronaut’s `susLevel` is less than the Player’s
+  * If the freeze is unsuccessful, the RedAstronaut’s `susLevel` doubles (multiply the current `susLevel` by 2)
   * Remember to change the frozen boolean value for the Crewmate as needed.
   * After the freeze attempt, check if the game is over using the provided method in Player.java
   * Does not return anything
 * `sabotage(Player p)`
   * It is not possible to sabotage another Impostor, and an Impostor that is frozen cannot sabotage. Also, sabotaging a frozen Player should do nothing.
-  * If the Impostor’s susLevel is under 20, through shifty maneuvers and cunning words, they are able to increase the Crewmate’s susLevel by 50%
-  * Otherwise, they can only manage to increase the Crewmate’s susLevel by 25%
-  * (Note: In both cases, the the Crewmate’s susLevel is rounded down to the nearest int value)
+  * If the Impostor’s `susLevel` is under 20, through shifty maneuvers and cunning words, they are able to increase the Crewmate’s `susLevel` by 50%
+  * Otherwise, they can only manage to increase the Crewmate’s `susLevel` by 25%
+  * (Note: In both cases, the the Crewmate’s `susLevel` is rounded down to the nearest int value)
   * Does not return anything
 * `equals(Object o)`
-  * Two Red are equal if they both have the same name, frozen, susLevel, and skill
+  * Two Red are equal if they both have the same name, frozen, `susLevel`, and skill
   * Returns a boolean
 * `toString()` - returns a String describing RedAstronaut as follows:
   * (Note: replace the values in brackets [] with the actual value)
-  * `"My name is [name], and I have a suslevel of [susLevel]. I am currently (frozen / not frozen). I am an [skill] player!"`
-    * If susLevel is greater than 15, return the String in all capital letters.
+  * `"My name is [name], and I have a `susLevel` of [susLevel]. I am currently (frozen / not frozen). I am an [skill] player!"`
+    * If `susLevel` is greater than 15, return the String in all capital letters.
   * You must use the `toString()` method from the `Player` class to receive full credit.
   * Getters and Setters as necessary.
 
 ### BlueAstronaut.java
-This file defines a BlueAstronaut, which is a Player and should have all attributes of one. Have BlueAstronaut implement the Crewmate interface.
+This file defines a BlueAstronaut, which is a Player and should have all attributes of one. **Have BlueAstronaut implement the Crewmate interface**.
 
 #### Variables
 All variables must be not allowed to be directly modified outside the class in which they are declared, unless otherwise stated in the description of the variable. Hint: there is a specific visibility modifier that can do this!
 
-The Blue class must have these variables. Do NOT redeclare any instance variables created in the Player class
+The Blue class must have these variables. Do **NOT** redeclare any instance variables created in the Player class
 
-* numTasks - the number of tasks that needs to be completed as an integer number
-* taskSpeed - the speed at which the astronaut is completing each task as a positive, nonzero integer number
+* `numTasks` - the number of tasks that needs to be completed as an integer number
+* `taskSpeed` - the speed at which the astronaut is completing each task as a positive, nonzero integer number
 
 #### Constructors
-* A constructor that takes in the name, susLevel, numTasks, and taskSpeed and sets all fields accordingly. It must accept the variables in the specified order.
-* A constructor that takes in just a name and assigns the following default values:
-  * susLevel: 15
-  * numTasks: 6
-  * taskSpeed: 10
+* A constructor that takes in the `name`, `susLevel`, `numTasks`, and `taskSpeed` and sets all fields accordingly. It must accept the variables in the specified order.
+* A constructor that takes in just a `name` and assigns the following default values:
+  * `susLevel`: 15
+  * `numTasks`: 6
+  * `taskSpeed`: 10
 
 #### Methods
 Do not create any other methods than those specified. Any extra methods will result in point deductions. All methods must have the proper visibility to be used where it is specified they are used.
@@ -128,105 +128,106 @@ Do not create any other methods than those specified. Any extra methods will res
 * `emergencyMeeting()`
   * A Player that is frozen cannot call an emergency meeting.
   * Holds a meeting and votes out (freezes) the most suspicious individual of the Player objects, only considering Players that are not frozen
-    * The player that has the highest susLevel will be accused of being the impostor and will be voted off (This could be them!)
-    * If two players have the same highest susLevel, no player will be voted off.
+    * The player that has the highest `susLevel` will be accused of being the impostor and will be voted off (This could be them!)
+    * If two players have the same highest `susLevel`, no player will be voted off.
     * **Hint**: think of an easy way to do this without having to iterate through the entire array. Check the Java API for Arrays for a method you can use.
   * Make sure to change the frozen variable of the player to true when voting off players (don’t call freeze!)
   * At the end of the vote, check if the game is over using the provided method in Player.java
   * Does not return anything
-completeTask()
-A BlueAstronaut that is frozen cannot complete tasks.
-If taskSpeed is greater than 20, subtract 2 from numTasks. Otherwise, subtract 1 from numTasks.
-If numTasks falls below 0, set it to 0
-After BlueAstronaut is done with their tasks, meaning numTasks is equal to 0 (only for the first time),
-Print out “I have completed all my tasks”
-Then reduce BlueAstronaut’s susLevel by 50% (round down)
-Does not return anything.
-equals(Object o)
-Two BlueAstronauts are equal if they both have the same name, frozen, susLevel, numTasks, and taskSpeed
-Returns a boolean
-toString() - returns a String describing BlueAstronaut as follows:
-"My name is [name], and I have a suslevel of [susLevel]. I am currently (frozen / not frozen). I have [numTasks] left over.”
-If susLevel is greater than 15, return the String in all capital letters.
-(Note: replace the values in brackets [] with the actual value)
-You must use the toString() method from the Player class to receive full credit.
-Getters and Setters as necessary.
-Gameplay.java
+* `completeTask()`
+  * A BlueAstronaut that is frozen cannot complete tasks.
+  * If `taskSpeed` is greater than 20, subtract 2 from numTasks. Otherwise, subtract 1 from numTasks.
+    * If `numTasks` falls below 0, set it to 0
+  * After BlueAstronaut is done with their tasks, meaning `numTasks` is equal to 0 (only for the first time),
+    * Print out `"I have completed all my tasks"`
+    * Then reduce BlueAstronaut’s `susLevel` by 50% (round down)
+  * Does not return anything.
+* `equals(Object o)`
+  * Two BlueAstronauts are equal if they both have the same name, frozen, `susLevel`, numTasks, and taskSpeed
+  * Returns a boolean
+* `toString()` - returns a String describing BlueAstronaut as follows:
+  * "My name is [name], and I have a `susLevel` of [susLevel]. I am currently (frozen / not frozen). I have [numTasks] left over.”
+    * If `susLevel` is greater than 15, return the String in all capital letters.
+  * (Note: replace the values in brackets [] with the actual value)
+  * You must use the `toString()` method from the Player class to receive full credit.
+* Getters and Setters as necessary.
+
+### Gameplay.java
 This Java file is a driver, meaning it will run the simulation. You can also use it to test your code. Here are some basic tests to get you started with Amidst Us. These tests are my no means comprehensive, so be sure to create your own!
 
-This is just to show an example of object implementation to see how objects interact with each other. Feel free to play around with different values and method callings, especially using toString to check the values after every step! This will NOT be turned in.
+**This is just to show an example of object implementation to see how objects interact with each other. Feel free to play around with different values and method callings, especially using toString to check the values after every step! This will NOT be turned in.**
 
 Create a `BlueAstronaut` with the following fields:
-* name = "Bob", susLevel = 20, numTasks = 6, taskSpeed = 30
+* `name` = `"Bob"`, `susLevel` = `20`, `numTasks` = `6`, `taskSpeed` = `30`
 
 Create a `BlueAstronaut` with the following fields:
-* name = "Heath", susLevel = 30, numTasks = 3, taskSpeed = 21
+* `name` = `"Heath"`, `susLevel` = `30`, `numTasks` = `3`, `taskSpeed` = `21`
 
 Create a `BlueAstronaut` with the following fields:
-* name = "Albert", susLevel = 44, numTasks = 2, taskSpeed = 0
+* `name` = `"Albert"`, `susLevel` = `44`, `numTasks` = `2`, `taskSpeed` = `0`
 
 Create a `BlueAstronaut` with the following fields:
-* name = "Angel", susLevel = 0, numTasks = 1, taskSpeed = 0
+* `name` = `"Angel"`, `susLevel` = `0`, `numTasks` = `1`, `taskSpeed` = `0`
 
 Create a `RedAstronaut` with the following fields:
-* name = "Liam", susLevel = 19, skill = "experienced"
+* `name` = `"Liam"`, `susLevel` = `19`, `skill` = `"experienced"`
 
 Create a `RedAstronaut` with the following fields:
-* name = "Suspicious Person", susLevel = 100, skill = "expert"
+* `name` = `"Suspicious Person"`, `susLevel` = `100`, `skill` = `"expert"`
 
 Have the objects do the following:
 1. Have RedAstronaut Liam sabotage BlueAstronaut Bob. After the sabotage:
-    * Bob should have: susLevel = 30, frozen = false
+    * Bob should have: `susLevel` = `30`, `frozen` = `false`
 2. Have RedAstronaut Liam freeze RedAstronaut Suspicious Person:
     * Nothing should happen
 3. Have RedAstronaut Liam freeze BlueAstronaut Albert. After the freeze:
-    * Liam should have: susLevel = 19
+    * Liam should have: `susLevel` = `19`
     * Albert is now frozen
 4. Have BlueAstronaut Albert call an emergency meeting:
     * Nothing should happen since he is frozen
 5. Have RedAstronaut Suspicious Person call an emergency meeting:
     * This will result in a tie between Bob and Heath, so nothing should happen
 6. Have BlueAstronaut Bob call an emergency meeting:
-    * Suspicious Person should have: frozen = true
+    * Suspicious Person should have: `frozen` = `true`
 7. Have BlueAstronaut Heath complete tasks:
-    * Heath should have: numTasks = 1
+    * Heath should have: `numTasks` = `1`
 8. Have BlueAstronaut Heath complete tasks:
     * “I have completed all my tasks” should be printed to console
-    * Heath should have: numTasks = 0, susLevel = 15
+    * Heath should have: `numTasks` = `0`, `susLevel` = `15`
 9. Have BlueAstronaut Heath complete tasks:
     * Nothing should happen
 10. Have RedAstronaut Liam freeze Angel:
-    * Angel should have: frozen = false
-    * Liam should have: susLevel = 38
+    * Angel should have: `frozen` = `false`
+    * Liam should have: `susLevel` = `38`
 11. Have RedAstronaut Liam sabotage Bob twice:
-    * Bob should have: susLevel = 46 (30 -> 37 -> 46)
+    * Bob should have: `susLevel` = `46` (30 -> 37 -> 46)
 12. Have RedAstronaut Liam freeze Bob:
-    * Bob should have: frozen = true
+    * Bob should have: `frozen` = `true`
 
 Now there are two options going forward
 
 13. Have BlueAstronaut Angel call emergency meeting:
-    * Liam should have: frozen = true
-    * “Crewmates win!” should be printed to console
+    * Liam should have: `frozen` = `true`
+    * `"Crewmates win!"` should be printed to console
 
 Or
 
 14. Have RedAstronaut Liam call sabotage on Heath 5 times:
-    * Heath should have: susLevel = 41 (15->18->22->27->33->41)
+    * Heath should have: `susLevel` = `41` (15->18->22->27->33->41)
 15. Have RedAstronaut Liam freeze Heath:
-    * Heath should have: frozen = true
-    * “Impostors win!” should be printed to console
+    * Heath should have: `frozen` = `true`
+    * `"Impostors win!"` should be printed to console
 
 Reuse your code when possible. Certain methods can be reused using certain keywords.
 
 ## Allowed Imports
-To prevent trivialization of the assignment, you are only allowed to import java.util.Arrays. You are not allowed to import any other classes or packages.
+To prevent trivialization of the assignment, you are only allowed to import `java.util.Arrays`. You are not allowed to import any other classes or packages.
 
 ## Feature Restrictions
 There are a few features and methods in Java that overly simplify the concepts we are trying to teach or break our auto grader. For that reason, do not use any of the following in your final submission:
 
-* var (the reserved keyword)
-* System.exit
+* `var` (the reserved keyword)
+* `System.exit`
 
 ## Grading
 Homeworks are graded in an "all or nothing" manner. If your code is correct, you receive a 100 for the assignment; if it isn't, you receive a 0.
