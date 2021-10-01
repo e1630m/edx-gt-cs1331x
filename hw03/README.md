@@ -231,3 +231,7 @@ When completing homeworks for CS1331 you may talk with other students about:
 * Key course concepts and Java language features used in your solution
 
 You may not discuss, show, or share by other means the specifics of your code, including screenshots, file sharing, or showing someone else the code on your computer, or use code shared by others.
+
+For learners unable to access the Vocareum environment, this is the provided Battleship.java file:
+
+[Battleship.java](https://raw.githubusercontent.com/e1630m/edx-gt-cs1331x/dda17a8dfbc085795fc0db281d24a9bbd96bb434/hw03/Battleship.java)
