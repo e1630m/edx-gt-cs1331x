@@ -7,9 +7,9 @@ You and your group of astronaut friends are on a spaceship! Fun! However, you ar
 ## Solution Description
 You will create two interfaces, one abstract class, and two concrete subclasses. You will be creating a number of fields and methods for each file. Based on the description given for each variable and method, you will have to decide whether or not the variables/method should be static, and whether it should be private or public. To make these decisions, you should carefully follow the guidelines on these keywords as taught in the modules.
 
-Hint: A lot of the code you will write for this assignment can be reused. Try to think of what keywords you can use that will help you! You should be able to put @Override on the line before the method header for any methods you override.
+Hint: A lot of the code you will write for this assignment can be reused. Try to think of what keywords you can use that will help you! You should be able to put `@Override` on the line before the method header for any methods you override.
 
-### Impostor.java
+### `Impostor.java`
 This file defines an interface with the name Impostor. Impostors will be able to mess with Players through sabotage and freeze tagging them.
 
 #### Methods
@@ -20,7 +20,7 @@ This file defines an interface with the name Impostor. Impostors will be able to
   * Abstract method that takes in a Player object and does not return anything
   * (Note: any class that implements Impostor must provide a method definition for this method)
 
-### Crewmate.java
+### `Crewmate.java`
 This file defines an interface with the name Crewmate.
 
 #### Methods
@@ -28,7 +28,7 @@ This file defines an interface with the name Crewmate.
   * Abstract method that does not take in anything and does not return anything
   * (Note: any class that implements Crewmate must provide a method definition for this method)
 
-### Player.java
+### `Player.java`
 This class represents a player in the game. You must not be able to create an instance of this class (Hint: there is a keyword that prevents us from creating instances of a class). Players implement the Comparable interface with the proper type parameter.
 
 A portion of this class was given to you. There are 2 methods (as follows) that you need to implement. Make sure to code where there are comments that say YOUR CODE HERE. Javadocs have been provided to guide you.
@@ -51,7 +51,7 @@ Do not create any other methods than those specified. Any extra methods will res
   * Takes in a Player object and returns an int, adhering to the API contract (Comparable Interface)
   * The method body should compare two Player objects based on the `susLevel` attribute. If the current Player instance’s `susLevel` is less than the Player passed in, return a negative number. If it is greater, return a positive number. If their `susLevel` attributes are equal, return 0
 
-### RedAstronaut.java
+### `RedAstronaut.java`
 This file defines a RedAstronaut, which is a Player and should have all attributes of one. **Have RedAstronaut implement the Impostor interface**.
 
 #### Variables
@@ -104,7 +104,7 @@ Do not create any other methods than those specified. Any extra methods will res
   * You must use the `toString()` method from the `Player` class to receive full credit.
   * Getters and Setters as necessary.
 
-### BlueAstronaut.java
+### `BlueAstronaut.java`
 This file defines a BlueAstronaut, which is a Player and should have all attributes of one. **Have BlueAstronaut implement the Crewmate interface**.
 
 #### Variables
@@ -152,7 +152,7 @@ Do not create any other methods than those specified. Any extra methods will res
   * You must use the `toString()` method from the Player class to receive full credit.
 * Getters and Setters as necessary.
 
-### Gameplay.java
+### `Gameplay.java`
 This Java file is a driver, meaning it will run the simulation. You can also use it to test your code. Here are some basic tests to get you started with Amidst Us. These tests are my no means comprehensive, so be sure to create your own!
 
 **This is just to show an example of object implementation to see how objects interact with each other. Feel free to play around with different values and method callings, especially using toString to check the values after every step! This will NOT be turned in.**
@@ -241,3 +241,7 @@ When completing homeworks for CS1331 you may talk with other students about:
 * Key course concepts and Java language features used in your solution
 
 You may not discuss, show, or share by other means the specifics of your code, including screenshots, file sharing, or showing someone else the code on your computer, or use code shared by others.
+
+For learners unable to access the Vocareum environment, this is the provided Player.java file:
+
+[Player.java](https://raw.githubusercontent.com/e1630m/edx-gt-cs1331x/0d6fb6566fc4af28e0155041ebaf94e18f26ad0a/hw05/Player.java)
